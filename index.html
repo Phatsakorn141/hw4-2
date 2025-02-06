@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบจัดการสินค้าขนาดเล็ก</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<h1>ระบบจัดการสินค้าขนาดเล็ก</h1>
+
+<!-- แบบฟอร์มเพิ่มสินค้า -->
+<div class="blog-form">
+  <h2 id="t2" class="form-title">เพิ่มสินค้า</h2>
+  <form id="addProductForm">
+    <label>รหัสสินค้า: <input type="text" id="productId" required></label><br>
+    <label>ชื่อสินค้า: <input type="text" id="productName" required></label><br>
+    <label>ราคา: <input type="number" id="productPrice" required></label><br>
+    <label>จำนวนคงเหลือ: <input type="number" id="productStock" required></label><br>
+    <label>หมวดหมู่: 
+      <select id="productCategory" required>
+        <option value="">เลือกหมวดหมู่</option>
+        <option value="electronics">อิเล็กทรอนิกส์</option>
+        <option value="clothing">เสื้อผ้า</option>
+        <option value="food">อาหาร</option>
+        <option value="books">หนังสือ</option>
+      </select>
+    </label><br>
+    <button type="submit">เพิ่มสินค้า</button>
+  </form>
+</div>
+
+<!-- ตารางสินค้า -->
+<h2>รายการสินค้า</h2>
+<table id="productTable">
+  <thead>
+    <tr>
+      <th>รหัสสินค้า</th>
+      <th>ชื่อสินค้า</th>
+      <th>ราคา</th>
+      <th>จำนวนคงเหลือ</th>
+      <th>หมวดหมู่</th>
+      <th>ยอดขายรวม</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<!-- รายงาน -->
+<h2>รายงาน</h2>
+<button onclick="checkLowStock()">ตรวจสอบสินค้าคงเหลือน้อย</button>
+<button onclick="generateSalesReport()">สร้างรายงานยอดขาย</button>
+<div id="report"></div>
+
+</body>
+</html>
